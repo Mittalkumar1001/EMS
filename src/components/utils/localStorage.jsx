@@ -1,0 +1,273 @@
+// localStorage.clear()
+const employees = [
+  {
+    id: 1,
+    firstname: "Aarav",
+    email: "employee1@company.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Task 1",
+        description: "Complete the monthly report.",
+        category: "Reports",
+        date: "20 mar 2024",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Task 2",
+        description: "Prepare the presentation for the meeting.",
+        category: "Meetings",
+        date: "10 aug 2024",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Task 3",
+        description: "Update the client database.",
+        category: "Database",
+        date: "20 june 2024",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+    taskSummary: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
+  },
+  {
+    id: 2,
+    firstname: "Vihaan",
+    email: "employee2@company.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Task 1",
+        description: "Organize team-building activities.",
+        category: "Teamwork",
+        date: "20 feb 2024",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Task 2",
+        description: "Prepare quarterly sales report.",
+        category: "Sales",
+        date: "20 jan 2025",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Task 3",
+        description: "Draft a new marketing proposal.",
+        category: "Marketing",
+        date: "15 oct 2024",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Task 4",
+        description: "Review the project timeline.",
+        category: "Projects",
+        date: "16 sep 2026",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+    taskSummary: {
+      active: 2,
+      newTask: 2,
+      completed: 1,
+      failed: 1,
+    },
+  },
+  {
+    id: 3,
+    firstname: "Aditya",
+    email: "employee3@company.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Task 1",
+        description: "Fix bugs in the application.",
+        category: "Development",
+        date: "11 feb 2023",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Task 2",
+        description: "Deploy new code to production.",
+        category: "Deployment",
+        date: "11 aug 2028",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Task 3",
+        description: "Document API endpoints.",
+        category: "Documentation",
+        date: "45 feb 2026",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+    taskSummary: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
+  },
+  {
+    id: 4,
+    firstname: "Ishaan",
+    email: "employee4@company.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Task 1",
+        description: "Schedule a client call.",
+        category: "Client Management",
+        date: "11 jul 2024",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Task 2",
+        description: "Analyze competitor data.",
+        category: "Analytics",
+        date: "22 nov 2026",
+        active: false,
+        newTask: true,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Task 3",
+        description: "Update HR policies.",
+        category: "HR",
+        date: "29 feb 2028",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Task 4",
+        description: "Conduct performance reviews.",
+        category: "Performance",
+        date: "20 sep 2028",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+      {
+        title: "Task 5",
+        description: "Organize training sessions.",
+        category: "Training",
+        date: "10 aug 2025",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+    ],
+    taskSummary: {
+      active: 3,
+      newTask: 3,
+      completed: 1,
+      failed: 1,
+    },
+  },
+  {
+    id: 5,
+    firstname: "Kiaan",
+    email: "employee5@company.com",
+    password: "123",
+    tasks: [
+      {
+        title: "Task 1",
+        description: "Plan marketing strategy.",
+        category: "Marketing",
+        date: "20 dec 2025",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        title: "Task 2",
+        description: "Organize project files.",
+        category: "Projects",
+        date: "20 may 2024",
+        active: false,
+        newTask: true,
+        completed: true,
+        failed: false,
+      },
+      {
+        title: "Task 3",
+        description: "Test the application.",
+        category: "Quality Assurance",
+        date: "01 feb 2024",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+    taskSummary: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
+  },
+];
+
+const admin = [
+  {
+    id: 1,
+    email: "admin@company.com",
+    password: "123",
+  }
+];
+
+export const setlocalStorage = () =>{
+localStorage.setItem('employees',JSON.stringify(employees))
+localStorage.setItem('admin',JSON.stringify(admin))
+
+}
+export const getlocalStorage = () => {
+  const employees = JSON.parse(localStorage.getItem('employees')) || [];
+  const admin = JSON.parse(localStorage.getItem('admin')) || null;
+  return { employees, admin };
+};
+
